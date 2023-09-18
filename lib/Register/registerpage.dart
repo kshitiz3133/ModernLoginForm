@@ -40,57 +40,66 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[50],
       resizeToAvoidBottomInset: false,
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 600,
-            width: 300,
-            child: Center(
-              child: Column(
-                children: [
-                  SizedBox(height: 70),
-                  Icon(Icons.account_circle,size: 90,),
-                  SizedBox(height: 10),
-                  TextField(
-                    controller: emailController,
-                    decoration: InputDecoration(
+      body: Container(
+        height: double.maxFinite,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.deepPurple.shade50,Colors.deepPurple.shade100,Colors.deepPurple.shade200,],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+          )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 600,
+              width: 300,
+              child: Center(
+                child: Column(
+                  children: [
+                    SizedBox(height: 70),
+                    Icon(Icons.account_circle,size: 90,),
+                    SizedBox(height: 10),
+                    TextField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)
+                          ),
+                          hintText: 'Email'
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    TextField(
+                      controller: passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15)
                         ),
-                        hintText: 'Email'
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  TextField(
-                    controller: passwordController,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15)
-                      ),
-                      hintText: 'Password',
+                        hintText: 'Password',
 
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  TextButton(onPressed: (){
-                    register();
-                  }, child: Text("Register",style: TextStyle(color: Colors.deepPurple))),
-                  TextButton(onPressed: (){}, child: Text("Cancel",style: TextStyle(color: Colors.deepPurple))),
-                  SizedBox(height: 40),
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [Text("Forget Password?"),GestureDetector(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));},child: Text("Log In"))],),
-                  SizedBox(height: 20,),
-                  TextButton(onPressed: (){
-                    Anonymous();
-                  }, child: Text("Login As Guest",style: TextStyle(color: Colors.deepPurple),)),
-                ],
+                    SizedBox(height: 20),
+                    TextButton(onPressed: (){
+                      register();
+                    }, child: Text("Register",style: TextStyle(color: Colors.deepPurple))),
+                    TextButton(onPressed: (){}, child: Text("Cancel",style: TextStyle(color: Colors.deepPurple))),
+                    SizedBox(height: 40),
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [Text("Forget Password?"),GestureDetector(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));},child: Text("Log In"))],),
+                    SizedBox(height: 20,),
+                    TextButton(onPressed: (){
+                      Anonymous();
+                    }, child: Text("Login As Guest",style: TextStyle(color: Colors.deepPurple),)),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
