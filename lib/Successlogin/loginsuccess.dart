@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[50],
+      backgroundColor: Colors.deepPurple[100],
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
