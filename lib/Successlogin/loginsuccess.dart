@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:testing/Successlogin/successloginanimation/successanimationcirclezoom.dart';
 import '../Authentication/auth_page.dart';
 
 class Home extends StatefulWidget {
@@ -11,11 +12,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   double a = 0;
-  double b = 250;
-  double c = 250;
-  int d = 0;
-  bool f = false;
-  BoxShape e = BoxShape.circle;
 
   @override
   void initState() {
@@ -24,11 +20,6 @@ class _HomeState extends State<Home> {
     Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         a = -1;
-        b += 900;
-        c += 900;
-        d = 1;
-        e = BoxShape.rectangle;
-        f = true;
       });
     });
   }
@@ -53,21 +44,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.deepPurple[100],
       body: Stack(children: [
-        AnimatedContainer(
-          alignment: Alignment(0, a),
-          duration: const Duration(seconds: 1),
-          child: AnimatedSize(
-            duration: const Duration(milliseconds: 400),
-            child: Container(
-              height: b,
-              width: c,
-              decoration: BoxDecoration(
-                shape: e,
-                color: Colors.deepPurple[50],
-              ),
-            ),
-          ),
-        ),
+        Animatedcircle(),
         AnimatedContainer(
           alignment: Alignment(0, a),
           duration: const Duration(seconds: 1),
