@@ -26,7 +26,6 @@ class _HomeState extends State<Home> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 
@@ -44,12 +43,15 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.deepPurple[100],
       body: Stack(children: [
-        Animatedcircle(),
+        AnimatedContainer(
+          duration: Duration(seconds: 1),
+          alignment: Alignment(0,a),
+            child: Animatedcircle()),
         AnimatedContainer(
           alignment: Alignment(0, a),
           duration: const Duration(seconds: 1),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(125, 10, 0, 0),
+            padding: const EdgeInsets.fromLTRB(145, 10, 0, 0),
             child: SizedBox(
               height: 65,
               child: Row(
