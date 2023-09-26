@@ -46,14 +46,17 @@ class _HomeState extends State<Home> {
         AnimatedContainer(
           duration: Duration(seconds: 1),
           alignment: Alignment(0,a),
-            child: Animatedcircle()),
+            child: Padding(
+              padding: const EdgeInsets.all(40.0),
+              child: Animatedcircle(),
+            )),
         AnimatedContainer(
           alignment: Alignment(0, a),
           duration: const Duration(seconds: 1),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(145, 10, 0, 0),
+            padding: const EdgeInsets.fromLTRB(100, 50, 0, 0),
             child: SizedBox(
-              height: 65,
+              height: 81,
               child: Row(
                 children: [
                   Column(
