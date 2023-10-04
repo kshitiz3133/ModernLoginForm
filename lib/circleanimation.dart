@@ -41,12 +41,12 @@ class _MyCircularContainerState extends State<MyCircularContainer>
         setState(() {});
       });
 
-      Future.delayed(Duration(seconds: 2), () {
+      Future.delayed(Duration(seconds: 1,milliseconds: 700), () {
         setState(() {
           a = 2.0;
         });
       });
-      Future.delayed(Duration(seconds: 4,milliseconds: 500), () {
+      Future.delayed(Duration(seconds: 3,milliseconds: 500), () {
         setState(() {
           _controller2.forward();
         });
