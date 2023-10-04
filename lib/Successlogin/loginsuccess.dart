@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:testing/Successlogin/successloginanimation/successanimationcirclezoom.dart';
 import '../Authentication/auth_page.dart';
+import '../circleanimation.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -43,6 +44,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.deepPurple[100],
       body: Stack(children: [
+        MyCircularContainer(),
         AnimatedContainer(
           duration: Duration(seconds: 1),
           alignment: Alignment(0,a),

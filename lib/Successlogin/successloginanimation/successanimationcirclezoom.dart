@@ -57,7 +57,7 @@ class _AnimatedcircleState extends State<Animatedcircle>
         width: 255,
         height: _scaleAnimation.value,
         decoration: BoxDecoration(
-          color: Colors.deepPurple[400],
+          color: Colors.deepPurple[100],
           borderRadius: BorderRadius.circular(_radiusAnimation.value),
         ),
       ),
